@@ -102,12 +102,13 @@ public class WeaponChangeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) &&
-this.gameObject.GetComponent<PhotonView>().IsMine == true)
+        if (Input.GetMouseButtonDown(1) && this.gameObject.GetComponent<PhotonView>().IsMine == true)
         {
-            //weaponNumber++;
-            this.GetComponent<PhotonView>().RPC("Change",
-           RpcTarget.AllBuffered);
+            Debug.Log("Right Clicked - Change Weapon");
+            
+            weaponNumber++;
+            
+            this.GetComponent<PhotonView>().RPC("Change",RpcTarget.AllBuffered);
 
             if (weaponNumber > weapons.Length - 1)
             {

@@ -13,13 +13,11 @@ public class ButtonScript : MonoBehaviour
     private int myID;
     private GameObject panel;
     private GameObject namesObject;
-
     public void Start()
     {
         Cursor.visible = true; // 마우스 커서를 화면에서 보이게 한다. 화면에서 버튼을 클릭하기 위함
 
         panel = GameObject.Find("ChoosePanel"); // 해당 button 들이 포함된 상위 Panel Object
-
         namesObject = GameObject.Find("NamesBG");
     }
 
